@@ -1,2 +1,206 @@
 <!--遺失物捜索一覧-->
 <!--担当：斎藤大-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>忘れ物検索結果</title>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #d9d9d9;
+      font-family: sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding-top: 55px;
+      box-sizing: border-box;
+    }
+
+    .search-area {
+      width: 92%;
+      margin: 0 auto;
+      background-color: #4f78ad;
+      border: 2px solid #222;
+      border-radius: 18px;
+      padding: 10px 28px 14px;
+      box-sizing: border-box;
+    }
+
+    .title {
+      color: white;
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      height: 46px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      font-size: 22px;
+      padding: 0 14px;
+      box-sizing: border-box;
+      background-color: #eeeeee;
+    }
+
+    .search-button {
+      width: 110px;
+      height: 46px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      background-color: #d0d0d0;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result-area {
+      width: 92%;
+      height: 600px;
+      margin: 8px auto 0;
+      border: 2px solid #222;
+      box-sizing: border-box;
+      padding: 20px;
+      background-color: #d0d0d0;
+    }
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .result-box {
+      flex: 1;
+      height: 58px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      background-color: #eeeeee;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      box-sizing: border-box;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .name {
+      margin-right: 34px;
+    }
+
+    .detail-button {
+      width: 110px;
+      height: 58px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      background-color: #4f78ad;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background-color: #4f78ad;
+      border-top: 2px solid #222;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 24px;
+      box-sizing: border-box;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <form class="search-area">
+      <div class="title">忘れ物検索結果</div>
+
+      <div class="search-row">
+        <input class="search-input" type="text" name="keyword">
+        <button class="search-button" type="submit">検索</button>
+      </div>
+    </form>
+
+    <main class="result-area">
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+      <div class="result-item">
+        <div class="result-box">
+          <span class="name">名称</span>
+          <span>拾得物ID</span>
+        </div>
+        <button class="detail-button">詳細</button>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      文教大学　情報学部　情報システム学科　プロジェクト演習B
+    </footer>
+
+  </div>
+</body>
+</html>
