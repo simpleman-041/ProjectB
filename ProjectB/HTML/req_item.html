@@ -1,2 +1,192 @@
 <!--遺失物捜索依頼記入画面-->
 <!--担当：谷畑湊斗-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>捜索依頼記入ページ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Yu Gothic", sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+/* タイトル部分 */
+.header{
+    width:500px;
+    height:150px;
+    background:#5a95d4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+    border:2px solid #333;
+}
+
+/* フォーム全体 */
+.form-container{
+    width:90%;
+    max-width:1500px;
+    margin:20px auto;
+    background:#d9d9d9;
+    border:2px solid #333;
+    border-radius:80px;
+    padding:60px;
+}
+
+/* 2列レイアウト */
+.form-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px 120px;
+}
+
+.form-group{
+    display:flex;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+label{
+    width:180px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+input{
+    width:360px;
+    height:50px;
+    border:3px solid #21445d;
+    border-radius:12px;
+    font-size:20px;
+    padding:10px;
+}
+
+.readonly{
+    text-align:center;
+    background:white;
+}
+
+/* ボタン */
+.btn-area{
+    text-align:right;
+    margin-top:30px;
+}
+
+button{
+    width:180px;
+    height:80px;
+    background:#5a95d4;
+    border:none;
+    border-radius:15px;
+    font-size:32px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* フッター */
+footer{
+    margin-top:20px;
+    background:#5a95d4;
+    color:white;
+    text-align:right;
+    padding:15px 40px;
+    font-size:24px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    捜索依頼記入ページ
+</div>
+
+<div class="form-container">
+
+    <div class="form-grid">
+
+        <!-- 左側 -->
+        <div>
+            <div class="form-group">
+                <label>名称</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>色</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>特徴</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>依頼日時</label>
+                <input type="datetime-local">
+            </div>
+
+            <div class="form-group">
+                <label>紛失場所</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- 右側 -->
+        <div>
+            <div class="form-group">
+                <label>氏名</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>電話番号</label>
+                <input type="tel">
+            </div>
+
+            <div class="form-group">
+                <label>メールアドレス</label>
+                <input type="email">
+            </div>
+
+            <div class="form-group">
+                <label>捜索依頼ID</label>
+                <input class="readonly" type="text" value="自動割り当て" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>依頼者ID</label>
+                <input class="readonly" type="text" value="自動割り当て" readonly>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="btn-area">
+        <button>提出</button>
+    </div>
+
+</div>
+
+<footer>
+    文教大学　情報学部　情報システム学科　プロジェクト演習B
+</footer>
+
+</body>
+</html>
