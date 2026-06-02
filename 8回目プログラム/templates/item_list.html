@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="row">
+          <div class="col mt-3">
+            <p class="h2 p-1  bg-success w-50 rounded text-center text-white">拾得物検索</p>
+            <p class="bg-light p-1 border m-0">拾得物検索機能では，文教大学湘南キャンパスの拾得物について，届けられているものを検索する機能です．検索キーワードから物品名を入力して検索してください．検索結果の件数と一覧が表形式で一覧表示されます．詳細を確認するには，詳細を選択してください．</p>
+            <hr>
+            <form action="/item_list" method="POST">
+            物品名<input type="text" name="key">
+            <button type="submit" class="btn btn-success">検索</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+              <span id="ritems">検索結果：{{n}}件</span>
+              <table class="table table-success table-striped">
+                <tr><th>大分類</th><th>物品名</th><th>拾得場所</th><th>色</th><th>特徴</th><th>日時</th><th>状態</th><th>操作</th></tr>
+                {% for i in j %}
+                <tr><td>{{i.大分類}}</td><td>{{i.物品名}}</td><td>{{i.拾得場所}}</td><td>{{i.色}}</td><td></td><td>{{i.変更日時}}</td><td>{{i.変更内容}}</td><td><a href="/item_detail?id={{i.拾得物ID}}" class="btn btn-success">詳細</a></td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}
