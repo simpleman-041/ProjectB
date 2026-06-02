@@ -6,7 +6,7 @@ def init_db(app):
             db = "mysql",
             user = "probc2026",
             password = "probc2026",
-            host = "localhost",
+            host = "127.0.0.1",
             dbName = "probc2026"
         )
     db.init_app(app)
