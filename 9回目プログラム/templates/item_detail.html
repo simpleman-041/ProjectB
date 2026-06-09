@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="row mt-3 mb-1">
+            <div class="col"><p class="h2 p-1  bg-success w-100 rounded text-center text-white">拾得物詳細</p></div>
+            <div class="col align-self-end"><a href="{{url_for('item_list')}}" class="btn btn-success">戻る</a></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="bg-light p-1 border m-0">拾得物詳細画面では，一覧画面で選択した行の拾得物について，詳細情報の表示と現在に至るまでの管理状況の変化について確認が可能です．管理状況を変更する場合には，対応者と状態を入力し，変更を選択してください．また，一覧画面に戻る場合は，戻るを選択してください</p>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="col">
+                <table class="table table-success">
+                    <tr><th>大分類</th><td>{{d.大分類}}</td></tr>
+                    <tr><th>物品名</th><td>{{d.物品名}}</td></tr>
+                    <tr><th>拾得場所</th><td>{{d.拾得場所}}</td></tr>
+                    <tr><th>色</th><td>{{d.色}}</td></tr>
+                    <tr><th>特徴</th><td>{{d.特徴}}</td></tr>
+                    <tr><th>画像</th><td>
+                        {% if d.画像 != "" %}
+                        <img src="{{url_for('static', filename='img/' + d.画像)}}" height="100">
+                        {% endif %}
+                    </td></tr>
+                </table>
+            </div>
+            <div class="col">
+                <table class="table table-success">
+                    <tr><th>日時</th><th>状態</th><th>対応者</th></tr>
+                    {% for i in d.変更履歴 %}
+                    <tr><td>{{i.変更日時}}</td><td>{{i.変更内容}}</td><td>{{i.氏名}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        {% if d.変更履歴[-1].変更内容 == "拾得" %}
+        <div class="row">
+            <div class="col mt-1">
+                <hr>
+                <form method="post" aciton="{{url_for('item_detail')}}">
+                <table>
+                    <tr><td>対応者（ユーザ）</td><td>
+                        {% if u %}
+                        <select name="user">
+                        {% for i in u %}
+                        <option value="{{i.ID}}">{{i.氏名}}</option>
+                        {% endfor %}
+                        </select>
+                        {% endif %}
+                    </td></tr>
+                    <tr><td>状態</td><td>
+                        <select name="act">
+                            <option value="返還">返還</option>
+                            <option value="警察署に移動">警察署に移動</option>
+                        </select>
+                    </td></tr>
+                </table>
+                <input type="hidden" name="id" value="{{d.id}}">
+                <button class="btn btn-success" type="submit">変更</button>
+                </form>
+                {% if errors %}
+                <div class="alert alert-danger">
+                    <ul>
+                    {% for e in errors %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</main>
+{% endblock %}
