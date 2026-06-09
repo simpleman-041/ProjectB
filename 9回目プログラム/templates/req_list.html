@@ -15,9 +15,15 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col mt-1">
-                <p>ここに拡張用の機能を実装してください</p>
+        <div class="row mt-3">
+            <div class="col">
+                <span id="rrequests">検索結果：{{n}}件</span>
+                <table class="table table-success table-striped">
+                    <tr><th>ID</th><th>ユーザID</th><th>拾得物分類ID</th><th>紛失場所</th><th>色</th><th>特徴</th><th>依頼日時</th></tr>
+                    {% for i in j %}
+                    <tr><td>{{i.ID}}</td><td>{{i.ユーザID}}</td><td>{{i.拾得物分類ID}}</td><td>{{i.紛失場所}}</td><td>{{i.色}}</td><td>{{i.特徴}}</td><td>{{i.依頼日時}}</td></tr>
+                    {% endfor %}
+                </table>
             </div>
         </div>
     </div>
