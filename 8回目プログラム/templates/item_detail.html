@@ -16,7 +16,7 @@
       <div class="col">
         <p class="bg-light p-2 border">
           拾得物詳細画面では，一覧画面で選択した行の拾得物について，
-          詳細情報の表示と現在に至るまでの管理状況の変化について確認が可能です．
+          詳細情報の表示と現在に至るまでの管理状況の変更について確認が可能です．
           管理状況を変更する場合には，対応者と状態を入力し，変更を選択してください．
           また，一覧画面に戻る場合は，戻るを選択してください．
         </p>
@@ -30,29 +30,29 @@
         <table class="table table-success table-bordered">
           <tr>
             <th>大分類</th>
-            <td>{{ item.大分類 }}</td>
+            <td>{{ d.大分類 }}</td>
           </tr>
           <tr>
             <th>物品名</th>
-            <td>{{ item.物品名 }}</td>
+            <td>{{ d.物品名 }}</td>
           </tr>
           <tr>
             <th>拾得場所</th>
-            <td>{{ item.拾得場所 }}</td>
+            <td>{{ d.拾得場所 }}</td>
           </tr>
           <tr>
             <th>色</th>
-            <td>{{ item.色 }}</td>
+            <td>{{ d.色 }}</td>
           </tr>
           <tr>
             <th>特徴</th>
-            <td>{{ item.特徴 }}</td>
+            <td>{{ d.特徴 }}</td>
           </tr>
           <tr>
             <th>画像</th>
             <td>
-              {% if item.画像 %}
-                <img src="{{ item.画像 }}" class="img-fluid rounded">
+              {% if d.画像 %}
+                <img src="{{ d.画像 }}" class="img-fluid rounded">
               {% endif %}
             </td>
           </tr>
